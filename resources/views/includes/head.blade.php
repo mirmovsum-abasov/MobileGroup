@@ -22,8 +22,6 @@
     <link href=" {{ asset('assets/css/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}" rel="stylesheet"
           type="text/css"/>
     <!-- Theme style -->
-    <link href=" {{ asset('assets/datatables/Buttons-1.7.1/css/buttons.bootstrap4.min.css') }}" rel="stylesheet"
-          type="text/css"/>
 
     <link href=" https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>
     <link href=" {{ asset('assets/css/AdminLTE.css') }}" rel="stylesheet" type="text/css"/>
