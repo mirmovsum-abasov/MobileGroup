@@ -15,9 +15,9 @@
                     @if(\Session::has('message'))
                         <div class="alert alert-success"> {{ \Session::get('message') }}</div>
                     @endif
-                    <div class="box-body table-responsive no-padding">
-                        <table class="table table-hover">
-                            <tbody>
+                    <div class="box-body table-responsive">
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
@@ -26,6 +26,8 @@
                                 <th>Logo</th>
                                 <th>Operations</th>
                             </tr>
+                            </thead>
+                            <tbody>
                             @forelse($companies as $company)
                                 <tr>
                                     <td>{{ $company->id }}</td>
@@ -57,11 +59,15 @@
                             </tbody>
                         </table>
                     </div><!-- /.box-body -->
-                    <div class="box-footer text-center">
-                        {!! $companies->links() !!}
-                    </div>
                 </div><!-- /.box -->
             </div>
         </div>
     </section>
+@endsection
+@section('js')
+    <script src="{{ asset('assets/js/plugins/datatables/jquery.dataTables.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('assets/js/plugins/datatables/dataTables.bootstrap.js') }}" type="text/javascript"></script>
+    <script>
+        var table = $('#example1').DataTable();
+    </script>
 @endsection
