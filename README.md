@@ -13,5 +13,3 @@ login : admin@admin.com
 
 password : password
 </p>
-<b><u>BÜTÜN ƏMƏLİYYATLAR BİR İSTİFADƏÇİ ÜZƏRİNDƏN OLACAQ</u></b>
-<hr>
