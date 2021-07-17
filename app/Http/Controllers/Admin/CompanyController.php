@@ -43,7 +43,6 @@ class CompanyController extends Controller
             if ($request->hasFile('logo')) {
                 $logo = $request->logo->hashName();
                 $request->logo->storeAs('/', $logo, 'public');
-                $request->replace($request->except('logo'));
                 $request = new Request($request->all());
                 $request->merge(['logo' => $logo]);
             }
@@ -90,14 +89,12 @@ class CompanyController extends Controller
                 $logo = $request->logo->hashName();
                 if ($logo) unlink(public_path() . '/storage/' . $company->logo);
                 $request->logo->storeAs('/', $logo, 'public');
-                $request->replace($request->except('logo'));
                 $request = new Request($request->all());
                 $request->merge(['logo' => $logo]);
             }
             $company->update($request->all());
             return Redirect::route('companies.index')->with('message', 'Item created successfully!');
         }
-
         return Redirect::route('companies.edit');
     }
 

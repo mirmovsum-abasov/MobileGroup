@@ -16,11 +16,11 @@ class CreateEmployeesTable extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->unsignedBigInteger('company_id');
-            $table->foreign('company_id')->references('id')->on('companies');
+            $table->foreign('company_id')->references('id')->on('companies')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('name', 100);
             $table->string('surname', 100);
-            $table->string('email', 150);
-            $table->string('phone', 14);
+            $table->string('email', 150)->nullable();
+            $table->string('phone', 20)->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

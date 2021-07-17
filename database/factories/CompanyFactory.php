@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Company;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Faker\Generator as Faker;
 
@@ -22,11 +23,13 @@ class CompanyFactory extends Factory
      */
     public function definition()
     {
-            return [
-                'name' => $this->faker->company,
-                'email' => $this->faker->email,
-                'website' => $this->faker->domainName,
-                'logo' => $this->faker->image('public/storage/', 640, 480, null, false)
-            ];
+        return [
+            'name' => $this->faker->company,
+            'email' => $this->faker->email,
+            'website' => $this->faker->domainName,
+            'logo' => $this->faker->image('public/storage/', 640, 480, null, false),
+            'created_at' => $this->faker->dateTime,
+            'updated_at' => $this->faker->dateTime,
+        ];
     }
 }
