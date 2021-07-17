@@ -107,7 +107,6 @@ class CompanyController extends Controller
     public function destroy(Company $company)
     {
         $message = $company->name . " successfully deleted!";
-        if ($company->logo) unlink(public_path() . '/storage/' . $company->logo);
         $company->delete();
 
         return Redirect::route('companies.index')->with('message', $message);
