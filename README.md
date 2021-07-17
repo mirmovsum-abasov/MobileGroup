@@ -2,6 +2,7 @@
 <hr>
 ENV faylından bazanı quraşdırdıqdan sonra atılacaq addımlar:
 <ul>
+    <li>.env.example faylin adin deyishin .env edin</li>
     <li>composer install</li>
     <li>php artisan key:generate</li>
     <li>php artisan migrate:refresh --seed</li>
