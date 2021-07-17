@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CompaniesRequest;
+use App\Mail\CompanyMail;
 use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -47,6 +48,11 @@ class CompanyController extends Controller
                 $request->merge(['logo' => $logo]);
             }
             $company::create($request->all());
+            $details = [
+                'name' => $request->name
+            ];
+
+            \Mail::to($request->email)->send(new CompanyMail($details));
             return Redirect::route('companies.index')->with('message', 'Item created successfully!');
         }
 

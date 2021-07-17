@@ -68,6 +68,8 @@
     <script src="{{ asset('assets/js/plugins/datatables/jquery.dataTables.js') }}" type="text/javascript"></script>
     <script src="{{ asset('assets/js/plugins/datatables/dataTables.bootstrap.js') }}" type="text/javascript"></script>
     <script>
-        var table = $('#example1').DataTable();
+        var table = $('#example1').DataTable({
+            "bSort":false
+        })
     </script>
 @endsection
