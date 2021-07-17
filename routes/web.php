@@ -3,6 +3,8 @@
 use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\EmployeeController;
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -19,9 +21,15 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes(['reset' => false, 'verify' => false, 'register' => false]);
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index']);
-Route::prefix('/admin')->middleware('auth')->group(function () {
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/{lang}', function ($lang) {
+    session(['locale' => $lang]);
+    App::setlocale($lang);
+    return back();
+});
+
+Route::get('/', [HomeController::class, 'index']);
+Route::prefix('/admin')->middleware(['auth', 'language'])->group(function () {
+    Route::get('/index', [DashboardController::class, 'index'])->name('dashboard');
     Route::resource('companies', CompanyController::class);
     Route::resource('employees', EmployeeController::class);
 });

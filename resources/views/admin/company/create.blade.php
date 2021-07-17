@@ -6,10 +6,10 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Company Create</h3>
+                        <h3 class="box-title">{{ __('lang.company_create') }}</h3>
                         <div class="box-tools">
                             <a class="btn btn-primary pull-right" style="color: #FFFFFF"
-                               href="{{ route('companies.index') }}"><i class="fa fa-backward"></i> Back</a>
+                               href="{{ route('companies.index') }}"><i class="fa fa-backward"></i> {{ __('lang.back') }}</a>
                         </div>
                     </div><!-- /.box-header -->
                     @if(count($errors) > 0)
@@ -25,24 +25,24 @@
                         <div class="box-body">
                             <!-- text input -->
                             <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" class="form-control" name="name" placeholder="Enter ..." value="{{ old('name') }}">
+                                <label>{{ __('lang.name') }}</label>
+                                <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                             </div>
                             <div class="form-group">
-                                <label>E-Mail</label>
-                                <input type="text" class="form-control" name="email" placeholder="Enter ..." value="{{ old('email') }}">
+                                <label>{{ __('lang.email') }}</label>
+                                <input type="text" class="form-control" name="email" value="{{ old('email') }}">
                             </div>
                             <div class="form-group">
-                                <label>Web Site</label>
-                                <input type="text" class="form-control" name="website" placeholder="Enter ..." value="{{ old('website') }}">
+                                <label>{{ __('lang.website') }}</label>
+                                <input type="text" class="form-control" name="website" value="{{ old('website') }}">
                             </div>
                             <div class="form-group">
-                                <label>Logo</label>
+                                <label>{{ __('lang.logo') }}</label>
                                 <input type="file" class="form-control" name="logo">
                             </div>
                         </div>
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-success"><i class="fa fa-check-square"></i> Save
+                            <button type="submit" class="btn btn-success"><i class="fa fa-check-square"></i> {{ __('lang.save') }}
                             </button>
                         </div>
                     </form>

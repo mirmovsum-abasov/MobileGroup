@@ -6,10 +6,11 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Employee List</h3>
+                        <h3 class="box-title">{{ __('lang.employees_list') }}</h3>
                         <div class="box-tools">
                             <a class="btn btn-success pull-right" style="color: #FFFFFF"
-                               href="{{ route('employees.create') }}"><i class="fa fa-plus"></i> ADD</a>
+                               href="{{ route('employees.create') }}"><i class="fa fa-plus"></i> {{ __('lang.add') }}
+                            </a>
                         </div>
                     </div><!-- /.box-header -->
                     @if(\Session::has('message'))
@@ -20,12 +21,12 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Company</th>
-                                <th>Name</th>
-                                <th>Surname</th>
-                                <th>E-Mail</th>
-                                <th>Phone</th>
-                                <th>Operations</th>
+                                <th>{{ __('lang.company') }}</th>
+                                <th>{{ __('lang.name') }}</th>
+                                <th>{{ __('lang.surname') }}</th>
+                                <th>{{ __('lang.email') }}</th>
+                                <th>{{ __('lang.phone') }}</th>
+                                <th>{{ __('lang.operations') }}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -44,17 +45,19 @@
                                             @method('DELETE')
                                         </form>
                                         <button onclick="document.getElementById('del{{$employee->id}}').submit();"
-                                                class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
-                                        <a class="btn btn-warning"
-                                           href="{{ route('employees.edit', $employee->id) }}"><i
-                                                    class="fa fa-edit"></i></a>
+                                                class="btn btn-danger">
+                                            <i class="fa fa-trash-o"></i>
+                                        </button>
+                                        <a class="btn btn-warning" href="{{ route('employees.edit', $employee->id) }}">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
                                     </td>
                                 </tr>
                             @empty
                                 <tr>
                                     <td colspan="6">
                                         <p class="text-center">
-                                            Not Found
+                                            {{ __('lang.not_found') }}
                                         </p>
                                     </td>
                                 </tr>
@@ -71,6 +74,15 @@
     <script src="{{ asset('assets/js/plugins/datatables/jquery.dataTables.js') }}" type="text/javascript"></script>
     <script src="{{ asset('assets/js/plugins/datatables/dataTables.bootstrap.js') }}" type="text/javascript"></script>
     <script>
-        var table = $('#example1').DataTable();
+        var table = $('#example1').DataTable({
+            responsive: false,
+        })
+
+        function changeSearchLabel(table, newLabel) {
+            var input = $(table + "_filter > label > input").detach();
+            $(table + "_filter > label").html(newLabel).append(input);
+        }
+
+        changeSearchLabel("#example1", "@lang('lang.search'):");
     </script>
 @endsection

@@ -10,12 +10,11 @@
     <link href=" {{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css"/>
     <!-- Ionicons -->
     <link href=" {{ asset('assets/css/ionicons.min.css') }}" rel="stylesheet" type="text/css"/>
+    <link href=" {{ asset('assets/css/flag-icon-css/css/flag-icon.min.css') }}" rel="stylesheet" type="text/css"/>
     <!-- Morris chart -->
     <link href=" {{ asset('assets/css/morris/morris.css') }}" rel="stylesheet" type="text/css"/>
     <!-- jvectormap -->
     <link href=" {{ asset('assets/css/jvectormap/jquery-jvectormap-1.2.2.css') }}" rel="stylesheet" type="text/css"/>
-    <!-- fullCalendar -->
-    <link href=" {{ asset('assets/css/fullcalendar/fullcalendar.css') }}" rel="stylesheet" type="text/css"/>
     <!-- Daterange picker -->
     <link href=" {{ asset('assets/css/daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet" type="text/css"/>
     <!-- bootstrap wysihtml5 - text editor -->

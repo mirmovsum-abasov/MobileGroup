@@ -6,7 +6,7 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Dashboard</h3>
+                        <h3 class="box-title">{{ __('lang.dashboard') }}</h3>
                     </div><!-- /.box-header -->
                     <div class="box-body">
                         <!-- small box -->
@@ -16,14 +16,14 @@
                                     {{ $companies }}
                                 </h3>
                                 <p>
-                                    Companies
+                                    {{ __('lang.companies') }}
                                 </p>
                             </div>
                             <div class="icon">
                                 <i class="fa  fa-building-o"></i>
                             </div>
                             <a href="{{ route('companies.index') }}" class="small-box-footer">
-                                More info <i class="fa fa-arrow-circle-right"></i>
+                                {{ __('lang.more_info') }} <i class="fa fa-arrow-circle-right"></i>
                             </a>
                         </div>
                         <!-- small box -->
@@ -33,14 +33,14 @@
                                     {{ $employees }}
                                 </h3>
                                 <p>
-                                    Employees
+                                    {{ __('lang.employees') }}
                                 </p>
                             </div>
                             <div class="icon">
                                 <i class="fa fa-users"></i>
                             </div>
                             <a href="{{ route('employees.index') }}" class="small-box-footer">
-                                More info <i class="fa fa-arrow-circle-right"></i>
+                                {{ __('lang.more_info') }} <i class="fa fa-arrow-circle-right"></i>
                             </a>
                         </div>
                     </div>

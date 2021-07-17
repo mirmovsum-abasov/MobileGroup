@@ -6,10 +6,11 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">Employee Edit</h3>
+                        <h3 class="box-title">{{ __('lang.employees_edit') }}</h3>
                         <div class="box-tools">
                             <a class="btn btn-primary pull-right" style="color: #FFFFFF"
-                               href="{{ route('employees.index') }}"><i class="fa fa-backward"></i> Back</a>
+                               href="{{ route('employees.index') }}"><i
+                                        class="fa fa-backward"></i> {{ __('lang.employees_edit') }}</a>
                         </div>
                     </div><!-- /.box-header -->
                     @if(count($errors) > 0)
@@ -26,7 +27,7 @@
                         <div class="box-body">
                             <!-- text input -->
                             <div class="form-group">
-                                <label>Company</label>
+                                <label>{{ __('lang.company') }}</label>
                                 <select class="form-control" name="company_id">
                                     <option value=""></option>
                                     @foreach($companies as $company)
@@ -38,28 +39,29 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" class="form-control" name="name" placeholder="Enter ..."
+                                <label>{{ __('lang.name') }}</label>
+                                <input type="text" class="form-control" name="name"
                                        value="{{ old('name', $employee->name) }}">
                             </div>
                             <div class="form-group">
-                                <label>Surname</label>
-                                <input type="text" class="form-control" name="surname" placeholder="Enter ..."
+                                <label>{{ __('lang.surname') }}</label>
+                                <input type="text" class="form-control" name="surname"
                                        value="{{ old('surname', $employee->surname) }}">
                             </div>
                             <div class="form-group">
-                                <label>E-Mail</label>
-                                <input type="text" class="form-control" name="email" placeholder="Enter ..."
+                                <label>{{ __('lang.email') }}</label>
+                                <input type="text" class="form-control" name="email"
                                        value="{{ old('email', $employee->email) }}">
                             </div>
                             <div class="form-group">
-                                <label>Phone</label>
-                                <input type="text" class="form-control" name="phone" placeholder="Enter ..."
+                                <label>{{ __('lang.phone') }}</label>
+                                <input type="text" class="form-control" name="phone"
                                        value="{{ old('phone', $employee->phone) }}">
                             </div>
                         </div>
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-success"><i class="fa fa-check-square"></i> Save
+                            <button type="submit" class="btn btn-success">
+                                <i class="fa fa-check-square"></i> {{ __('lang.save') }}
                             </button>
                         </div>
                     </form>
