@@ -27,7 +27,7 @@ class CompanyFactory extends Factory
             'name' => $this->faker->company,
             'email' => $this->faker->email,
             'website' => $this->faker->domainName,
-            'logo' => $this->faker->image('public/storage/', 640, 480, null, false),
+            'logo' => $this->faker->image(storage_path(''),400,300, null, false),
             'created_at' => $this->faker->dateTime,
             'updated_at' => $this->faker->dateTime,
         ];

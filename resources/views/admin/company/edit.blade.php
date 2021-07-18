@@ -13,13 +13,13 @@
                                         class="fa fa-backward"></i> {{ __('lang.back') }}</a>
                         </div>
                     </div><!-- /.box-header -->
-                    @if(count($errors) > 0)
+                    @isset($errors)
                         <ul class="list-unstyled">
                             @foreach ($errors->all() as $error)
                                 <li class="alert alert-danger">{{ $error }}</li>
                             @endforeach
                         </ul>
-                    @endif
+                    @endisset
                     <form role="form" action="{{ route('companies.update', $company->id) }}" method="POST"
                           enctype="multipart/form-data">
                         @csrf
