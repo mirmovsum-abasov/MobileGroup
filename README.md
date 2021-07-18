@@ -35,4 +35,25 @@ login : admin@admin.com
 
 password : password
 </p>
+<hr>
+<p>
+    <b>PHPUnit</b> istifade etmek ucun terminalda bu komandani yazin: <br>
 
+```text
+php vendor/phpunit/phpunit/phpunit
+```
+
+<small> <b>Qeyd:</b> PHPUnit komandasindan sonra DATABASE-dəki məlumatlar silinir. Məlumatları yenidən yazdırmaq üçün</small>
+
+```
+php artisan migrate:refresh --seed
+```
+
+<small>
+komandasından istifadə edin.
+</small>
+
+
+
+
+</p>
