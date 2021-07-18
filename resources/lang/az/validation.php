@@ -7,6 +7,7 @@ return [
     'max' => [
         'string' => ':attribute bölməsi :max simvoldan cox ola bilməz.',
     ],
+    'dimensions' => ':attribute faylının ölçüləri düzgün deyil.',
     'mimes' => ':attribute formati duzgun deyil. Dəstəklənən :attribute növləri: :values.',
     'min' => [
         'string' => 'The :attribute  bölməsi :max simvoldan az ola bilməz.',
