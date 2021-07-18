@@ -2,6 +2,22 @@
 <hr>
 <ul>
     <li>.env.example faylin adin deyishin .env edin</li>
+    <li>.env faylina DATABASE məlumatların yazın</li>
+    <li>
+        E-Mail Notification işləməsi üçün, .env faylında lazımlı bolmələri əvəz edin
+
+```dotenv
+MAIL_DRIVER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=abasovmiri50@gmail.com
+MAIL_PASSWORD=miri1122
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=abasovmiri50@gmail.com
+MAIL_FROM_NAME="MOBILE GROUP"
+```
+
+</li>
 </ul>
 ENV faylından bazanı quraşdırdıqdan sonra atılacaq addımlar:
 <ul>
@@ -19,3 +35,4 @@ login : admin@admin.com
 
 password : password
 </p>
+
