@@ -4,10 +4,8 @@ namespace Tests\Feature\Admin;
 
 use App\Models\Company;
 use App\Models\User;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
-use Tests\Feature\UserTest;
 use Tests\TestCase;
 
 class CompaniesTest extends TestCase
@@ -18,11 +16,13 @@ class CompaniesTest extends TestCase
      * @return void
      */
     use WithFaker;
+    use RefreshDatabase;
 
     public function setUp(): void
     {
         parent::setUp();
-        $this->actingAs(User::find(1), 'web');
+        $user = User::factory()->testCreate()->create();
+        $this->actingAs($user, 'web');
     }
 
     public function testIndex()
